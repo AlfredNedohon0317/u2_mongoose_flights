@@ -139,3 +139,8 @@ async function listCAtoNYFlights() {
 // listFlightsByDate();
 // listUpcomingFlights();
 // listCAtoNYFlights();
+
+
+
+
+//assited by chat gpt3.5
