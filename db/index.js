@@ -1,15 +1,12 @@
-const mongoose = require('mongoose');
+const mongoose = require('mongoose')
 
-mongoose.connect('mongodb://localhost:27017/flightsDatabase', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-});
+mongoose
+.connect('mongodb://127.0.0.1:27017/flightsDatabase')
+.then(()=>console.log('connected to mongodb!'))
+.catch((error)=> console.error('Error!', error.message))
 
-const db = mongoose.connection;
+mongoose.set('debug', true)
 
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function() {
-    console.log('Connected to the database');
-});
+const db = mongoose.connection
 
-module.exports = db;
+module.exports = db
