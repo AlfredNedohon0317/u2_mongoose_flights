@@ -9,5 +9,5 @@ const Airport = new Schema({
 {timestamps:true});
 
 
-module.exports = mongoose.model('airports', Airport);
+module.exports = mongoose.model('Airport', Airport);
 

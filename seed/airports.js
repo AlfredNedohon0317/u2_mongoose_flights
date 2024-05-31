@@ -1,5 +1,5 @@
 const db = require('../db')
-const {Airport} = require('../models/airport')
+const Airport = require('../models/airport')
 db.on('error', console.error.bind(console, "MongoDB connection error:"))
 
 const main = async () => {
@@ -9,6 +9,9 @@ const airports = [
     { name: 'San Francisco International Airport', location: 'San Francisco, CA', code: 'SFO' },
     { name: 'LaGuardia Airport', location: 'New York, NY', code: 'LGA' }
 ];
+
+console.log(Airport)
+
 await Airport.insertMany(airports)
 console.log('Created airports!')
 }

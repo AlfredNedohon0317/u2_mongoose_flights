@@ -1,6 +1,6 @@
 const db = require('../db/index.js')
-const {Airport, Flight} = require('../models/airport.js')
-const {Airport, Flight} = require('../models/flight.js')
+const Airport = require('../models/airport.js')
+const Flight = require('../models/flight.js')
 db.on('error', console.error.bind(console, "MongoDB connection error"))
 
 

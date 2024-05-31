@@ -1,25 +1,21 @@
-const db = require('../db')
-const {Airport, Flight} = require('../models/airport.js')
-const {Airport, Flight} = require('../models/flight.js')
+const db = require('./db')
+const Airport = require('./models/airport.js')
+const Flight = require('./models/flight.js')
 
 
 const findFlight = async () => {
     const flights = await Flight.find()
-    const airports = await Airport.find()
     console.log(flights)
-    console.log(airports)
 }
 
 const detailFlight = async () => {
-    const flights = await Flight.findById('')
-    const airports = await Airport.findById('')
+    const flights = await Flight.findById('66590e7f033fa7649d3b08e3')
     console.log(flights)
-    console.log(airports)
 }
 
 const createFlight = async () => {
-    const airport = await Airport.findOne()
-    const airport2 = await Airport.findOne()
+    const airport = await Airport.findById('6658ef9c9bd96e63ead137b0')
+    const airport2 = await Airport.findById('6658ef9c9bd96e63ead137b2')
 
     let flight = await Flight.create({
         airline: 'delta',
@@ -47,8 +43,8 @@ const updateFlight = async () => {
 }
 
 const deleteFlight = async () => {
-    let deletedFlight = await Flight.deleteOne({ price: 15})
-    let deletedAirport = await Airport.deleteOne( {name: 'los Angeles International Airport'})
+    let deletedFlight = await Flight.deleteOne()
+    let deletedAirport = await Airport.deleteOne()
     console.log(deletedFlight, deletedAirport)
 }
 
@@ -65,5 +61,4 @@ async function main() {
         await db.close()
     }
   }
-  
   main()
